@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  study:
+    image: "ghcr.io/happycastle114/pohang_front:dev"
+    container_name: pohang-front
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pohang.rule=Host(`pohang.soungmin.me`)"
+      - "traefik.http.services.pohang.loadbalancer.server.port=80"
